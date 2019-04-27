@@ -1,1 +1,44 @@
 <h1>RxJS playground</h1>
+
+<a href="https://www.learnrxjs.io/concepts/rxjs-primer.html">
+RxJs Premier
+</a>
+<!-- <p>
+What is an Observable?
+An observable represents a stream, or source of data that can arrive over time. observables are cold.
+</p>
+<p>
+  Subscriptions are what set everything in motion. You can think of this like a faucet, you have a stream of water ready to be tapped (observable), someone just needs to turn the handle. In the case of observables, that role belongs to the subscriber.</p>
+<pre>
+
+import { fromEvent } from 'rxjs';
+
+// grab button reference
+const button = document.getElementById('myButton');
+
+// create an observable of button clicks
+const myObservable = fromEvent(button, 'click');
+
+// for now, let's just log the event on each click
+const subscription = myObservable.subscribe(event => console.log(event));
+</pre>
+<p>
+  Set up an event listener on our button for click events.
+Call the function we passed to the subscribe method (observer) on each click event.
+Return a subscription object with an unsubscribe which contains clean up logic, like removing appropriate event listeners</p>
+
+<pre>
+  // instead of a function, we will pass an object with next, error, and complete methods
+const subscription = myObservable.subscribe({
+  // on successful emissions
+  next: event => console.log(event),
+  // on errors
+  error: error => console.log(error),
+  // called once on completion
+  complete: () => console.log('complete!')
+});
+
+// clean up with unsubscribe
+subscription.unsubscribe();
+secondSubscription.unsubscribe();
+</pre> -->
