@@ -16,7 +16,12 @@ result.subscribe(x => console.log(x));
 
 // Take : this takes / prints only 1 item in array
 // tap : it will give per item details
-let assetTypes =[{assetTypedId:1,assetType:'Type1'},{assetTypedId:2,assetType:'Type2'},{assetTypedId:3,assetType:'Type3'},{assetTypedId:4,assetType:'Type4'},{assetTypedId:5,assetType:'Type5'}];
+let assetTypes =[
+                  {assetTypedId:1,assetType:'Type1'},
+                  {assetTypedId:2,assetType:'Type2'},
+                  {assetTypedId:3,assetType:'Type3'},
+                  {assetTypedId:4,assetType:'Type4'},
+                  {assetTypedId:5,assetType:'Type5'}];
 const assets = of(...assetTypes).pipe(
       take(2),
       tap(x => console.log('Tap info',x)),
