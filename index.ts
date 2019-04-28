@@ -31,11 +31,9 @@ assets.subscribe(x => console.log('output : ',x));
 
 // Observable and subscribe 
 /*
-Observables are streams or source of data that can arrive over time.
-
 What is an Observable? An observable represents a stream, or source of data that can arrive over time. observables are cold.
 
-Subscriptions are what set everything in motion. You can think of this like a faucet, you have a stream of water ready to be tapped (observable), someone just needs to turn the handle. In the case of observables, that role belongs to the subscriber.
+Subscriptions are what set everything in motion. You can think of this like a tap, you have a stream of water ready to be tapped (observable), someone just needs to turn the handle. In the case of observables, that role belongs to the subscriber.
 
 import { fromEvent } from 'rxjs';
 
