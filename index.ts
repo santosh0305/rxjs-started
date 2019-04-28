@@ -1,5 +1,11 @@
 import { of } from 'rxjs'; 
-import { map, tap, take, filter, switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { 
+  map, tap, take, filter, 
+  switchMap, 
+  debounceTime, 
+  distinctUntilChanged, 
+  combineLatest } 
+from 'rxjs/operators';
 
 // Of
 const source = of('World').pipe(
@@ -8,7 +14,7 @@ const source = of('World').pipe(
 source.subscribe(x => console.log(x));
 
 // Spread Operator with array
-let numbers = [1,2,3];
+let numbers = [1,2,3];combineLatest
 const result = of(...numbers).pipe(
   map(result => `result : ${result}!`)
 );
@@ -99,14 +105,12 @@ class typeaheadApi {
 }
 
 /*
- Need to filter data from a source? Check out the filtering operators. Trying to track down a bug, or debug the flow of data through your observable stream? There are utility operators that will do the trick
- */
+Need to filter data from a source? Check out the filtering operators. Trying to track down a bug, or debug the flow of data through your observable stream? There are utility operators that will do the trick
 
-/*
 https://www.learnrxjs.io/operators/filtering/
 Filtering Operators
 In a push based approach, picking and choosing how and when to accept items is important. These operators provide techniques for accepting values from an observable source and dealing with backpressure.
-Contents
+
 audit
 auditTime
 debounce
@@ -129,9 +133,7 @@ takeUntil :star:
 takeWhile
 throttle
 throttleTime
-*/
 
-/*
 https://www.learnrxjs.io/operators/utility/
 tap / do :star:
 delay :star:
@@ -146,3 +148,12 @@ timeoutWith
 toPromise
 */
 
+// CombineLatest
+// give me the last emitted value from each source, whenever either source emits
+const sourceOne = of(1,2,3,4);
+const sourceTwo = of(4,5,6,7,8);
+combineLatest(sourceOne, sourceTwo).subscribe(
+  ([latestValueFromSourceOne, latestValueFromSourceTwo]) => {
+    // perform calculation
+  }
+);
