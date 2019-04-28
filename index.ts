@@ -66,11 +66,11 @@ secondSubscription.unsubscribe();
 const dataSource  = of(1,2,3,4,5,6,7,8);
 const subscription  = dataSource .pipe(
   map( x => x*2)
-).subscribe(val => console.log(val));
+).subscribe(val => console.log('Multiple : ',val));
 
 // Using Filter
 const filteredEvenNumbers = dataSource.pipe(
-  filter(evenNumber => evenNumber%2==0),
+  filter( evenNumber => evenNumber%2==0 ),
   take(3)
 ).subscribe(result => console.log('Filtered Even',result));
 
