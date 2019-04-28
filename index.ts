@@ -1,6 +1,9 @@
 import { of } from 'rxjs'; 
 import { 
-  map, tap, take, filter, 
+  map, 
+  tap, 
+  take, 
+  filter, 
   switchMap, 
   debounceTime, 
   distinctUntilChanged, 
@@ -152,8 +155,24 @@ toPromise
 // give me the last emitted value from each source, whenever either source emits
 const sourceOne = of(1,2,3,4);
 const sourceTwo = of(4,5,6,7,8);
+// give me the last emitted value from each source, whenever either source emits
 combineLatest(sourceOne, sourceTwo).subscribe(
   ([latestValueFromSourceOne, latestValueFromSourceTwo]) => {
     // perform calculation
   }
 );
+
+
+// Error handling
+source
+  .pipe(
+    mergeMap(value => {
+      return makeRequest(value).pipe(
+        catchError(handleErrorByReturningObservable)
+      );
+    })
+  )
+  .subscribe(value => {
+    // take action
+  });
+
