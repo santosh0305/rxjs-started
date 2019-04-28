@@ -60,7 +60,6 @@ const subscription = myObservable.subscribe({
 // clean up with unsubscribe
 subscription.unsubscribe();
 secondSubscription.unsubscribe();
-
 */
 
 // Using Of and map operators
