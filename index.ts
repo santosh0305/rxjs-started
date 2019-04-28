@@ -76,7 +76,7 @@ const filteredEvenNumbers = dataSource.pipe(
 
 // What is Pipe 
 /*
-The pipe function is the assembly line from your observable data source through your operators. Just like raw material in a factory goes through a series of stops before it becomes a finished product, source data can pass through a pipe-line of operators where you can manipulate, filter, and transform the data to fit your use case.
+  The pipe function is the assembly line from your observable data source through your operators. Just like raw material in a factory goes through a series of stops before it becomes a finished product, source data can pass through a pipe-line of operators where you can manipulate, filter, and transform the data to fit your use case.
 */
 
 // Using switchMap
