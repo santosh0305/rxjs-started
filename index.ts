@@ -83,10 +83,8 @@ const filteredEvenNumbers = dataSource.pipe(
 // observable of values from a text box, pipe chains operators together
 const inputValue = of(1,2,4,5,6);
 inputValue.pipe(
-    // wait for a 200ms pause
-    debounceTime(200),
-    // if the value is the same, ignore
-    distinctUntilChanged(),
+    debounceTime(2000),        // wait for a 2sec pause
+    distinctUntilChanged(),   // if the value is the same, ignore
     // if an updated value comes through while request is still active cancel previous request and 'switch' to new observable
     switchMap(searchTerm => this.typeaheadApi)
   )
