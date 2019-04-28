@@ -7,7 +7,7 @@ const source = of('World').pipe(
 );
 source.subscribe(x => console.log(x));
 
-// Reduce Operator with array
+// Spread Operator with array
 let numbers = [1,2,3];
 const result = of(...numbers).pipe(
   map(result => `result : ${result}!`)
